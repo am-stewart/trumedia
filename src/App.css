@@ -51,3 +51,15 @@
 .item {
   padding: 0 3%;
 }
+
+.stat-wrapper {
+  background-color: white;
+  margin: 2% 35%;
+  padding: 1%;
+}
+
+.opponent-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 30%
+}
