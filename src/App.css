@@ -63,3 +63,17 @@
   justify-content: space-evenly;
   margin: 0 30%
 }
+
+.dropdown-items img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 100px;
+  padding-right: 5px;
+}
+
+.dropdown-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
