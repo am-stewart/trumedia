@@ -13,7 +13,7 @@ function App() {
       <PlayersContext.Provider value={{players, setPlayers}}>
         <PlayerContext.Provider value={{player, setPlayer}}>
           <DropdownMenu />
-          <Players />
+          {/* <Players /> */}
         </PlayerContext.Provider>
       </PlayersContext.Provider>
     </div>

@@ -1,29 +1,77 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
+import axios from 'axios';
 import { Select } from 'antd';
-// import Player from './Player';
-import { PlayersContext } from '../Context';
+import Player from './Player';
+import { PlayersContext, PlayerContext } from '../Context';
 
-const handleChange = (value) => {
-  console.log(`selected ${value}`)
-}
+
 
 const DropdownMenu = () => {
-  const { players } = useContext(PlayersContext);
+  const { players, setPlayers } = useContext(PlayersContext);
+  const { setPlayer } = useContext(PlayerContext);
+  const [toggleOn, setToggleOn] = useState(false);
 
+  useEffect(() => {
+    axios.get('https://project.trumedianetworks.com/api/nfl/players', {
+      headers:
+      {
+        "tempToken": "1d982543-8084-47ef-bb55-2c3e84cf1668",
+        "expires": "Thu, 09 Jun 2022 21:17:35 GMT"
+      }
+    })
+    .then(res => {
+      setPlayers([...res.data])
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }, [])
+
+  const handleSelect = (key) => {
+    // console.log(`selected ${value}`)    
+    fetchPlayer(key)
+    setToggleOn(true)
+    console.log(toggleOn)
+  }
+
+  // const handleClear = (value) => {
+
+  // }
+
+  const fetchPlayer= (id) => {
+    axios.get(`https://project.trumedianetworks.com/api/nfl/player/${id}`, {
+      headers:
+      {
+        "tempToken": "1d982543-8084-47ef-bb55-2c3e84cf1668",
+        "expires": "Thu, 09 Jun 2022 21:17:35 GMT"
+      }
+    })
+    .then(res => {
+      setPlayer([...res.data])
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+  
   return (
     <div>
-      <header>
-        <Select placeholder='Choose player(s) ▼' 
-        mode={'multiple'} 
+      <h1> 2018 NFL Quarterbacks </h1>
+        <Select placeholder='Choose player' 
+        mode={'multiple'}
         allowClear 
         style={{width: '30%'}}
-        onChange={handleChange}>
+        onSelect={handleSelect}>
           {players.map((player) => {
-             return <Select.Option key={player.playerId} value={player.fullName}></Select.Option>
+             return <Select.Option 
+             key={player.playerId} 
+             value={player.playerId}>
+               {player.fullName}
+             </Select.Option>
           })}
         </Select>
-      </header>
+        {toggleOn && <Player />}
     </div>
   );
 };

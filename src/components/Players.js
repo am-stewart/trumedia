@@ -24,22 +24,6 @@ function Players(props) {
     })
   }
 
-useEffect(() => {
-  axios.get('https://project.trumedianetworks.com/api/nfl/players', {
-    headers:
-    {
-      "tempToken": "1d982543-8084-47ef-bb55-2c3e84cf1668",
-      "expires": "Thu, 09 Jun 2022 21:17:35 GMT"
-    }
-  })
-  .then(res => {
-    setPlayers([...res.data])
-  })
-  .catch(err => {
-    console.log(err);
-  })
-}, [])
-
   return (
     <div>
       <h1>2018 NFL Quarterbacks</h1>
