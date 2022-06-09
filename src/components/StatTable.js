@@ -13,24 +13,24 @@ const columns = [
     dataIndex: 'week',
     key: 'week',
     fixed: true,
-    width: 50,
+    width: 20,
   },
   {
     title: 'Opponent',
     dataIndex: 'opponent',
     key: 'opponent',
     fixed: true,
-    width: 50,
+    width: 20,
   },
   {
-    title: 'PsYds',
+    title: 'PsYds/Att',
     dataIndex: 'PsYdsAtt',
     render: (text, record) => (
       <span>{Math.round(record.PsYds / record.Att)}</span>
     ),
     key: 'PsYds/Att',
     fixed: true,
-    width: 50,
+    width: 20,
   },
   {
     title: 'Cmp%',
@@ -40,7 +40,7 @@ const columns = [
     ),
     key: 'Cmp',
     fixed: true,
-    width: 50,
+    width: 20,
   },
 ];
 
@@ -50,10 +50,6 @@ const columns = [
         columns={columns} 
         dataSource={player} 
         pagination={false}
-        scroll={{
-          // x: 500,
-          y: 500,
-        }}
         bordered />
     </div>
   )

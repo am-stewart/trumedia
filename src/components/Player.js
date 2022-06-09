@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { PlayerContext } from '../Context'
+import React from "react";
+// import { PlayerContext } from '../Context'
 import StatTable from "./StatTable";
 
 function Player(props) {
-  const { player } = useContext(PlayerContext);
+  // const { player } = useContext(PlayerContext);
   
   return (
     <div className="player-wrapper">

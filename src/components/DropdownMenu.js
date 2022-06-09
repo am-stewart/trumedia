@@ -5,8 +5,6 @@ import { Select } from 'antd';
 import Player from './Player';
 import { PlayersContext, PlayerContext } from '../Context';
 
-
-
 const DropdownMenu = () => {
   const { players, setPlayers } = useContext(PlayersContext);
   const { setPlayer } = useContext(PlayerContext);
@@ -16,8 +14,8 @@ const DropdownMenu = () => {
     axios.get('https://project.trumedianetworks.com/api/nfl/players', {
       headers:
       {
-        "tempToken": "1d982543-8084-47ef-bb55-2c3e84cf1668",
-        "expires": "Thu, 09 Jun 2022 21:17:35 GMT"
+        "tempToken": "304c00c4-927f-432b-a9c7-c22188a7b7d0",
+        "expires": "Fri, 10 Jun 2022 21:33:22 GMT"
       }
     })
     .then(res => {
@@ -41,8 +39,8 @@ const DropdownMenu = () => {
     axios.get(`https://project.trumedianetworks.com/api/nfl/player/${id}`, {
       headers:
       {
-        "tempToken": "1d982543-8084-47ef-bb55-2c3e84cf1668",
-        "expires": "Thu, 09 Jun 2022 21:17:35 GMT"
+        "tempToken": "304c00c4-927f-432b-a9c7-c22188a7b7d0",
+        "expires": "Fri, 10 Jun 2022 21:33:22 GMT"
       }
     })
     .then(res => {
@@ -54,11 +52,11 @@ const DropdownMenu = () => {
   }
   
   return (
-    <div>
+    <div className='dropdown-wrapper'>
       <h1> 2018 NFL Quarterbacks </h1>
         <Select placeholder='Choose player'
         allowClear 
-        style={{width: '30%'}}
+        style={{width: '20%'}}
         onSelect={handleSelect}
         onClear={handleClear}>
           {players.map((player) => {
