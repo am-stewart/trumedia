@@ -77,3 +77,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border: 2px solid red;
+  margin-top: 25px;
+}
+
+.stat-wrapper {
+  border: 1px solid blue;
+  margin-top: 25px;
+}

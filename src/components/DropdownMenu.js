@@ -29,15 +29,13 @@ const DropdownMenu = () => {
   }, [])
 
   const handleSelect = (key) => {
-    // console.log(`selected ${value}`)    
     fetchPlayer(key)
     setToggleOn(true)
-    console.log(toggleOn)
   }
 
-  // const handleClear = (value) => {
-
-  // }
+  const handleClear = (value) => {
+    setToggleOn(false)
+  }
 
   const fetchPlayer= (id) => {
     axios.get(`https://project.trumedianetworks.com/api/nfl/player/${id}`, {
@@ -58,11 +56,11 @@ const DropdownMenu = () => {
   return (
     <div>
       <h1> 2018 NFL Quarterbacks </h1>
-        <Select placeholder='Choose player' 
-        mode={'multiple'}
+        <Select placeholder='Choose player'
         allowClear 
         style={{width: '30%'}}
-        onSelect={handleSelect}>
+        onSelect={handleSelect}
+        onClear={handleClear}>
           {players.map((player) => {
              return <Select.Option 
              key={player.playerId} 

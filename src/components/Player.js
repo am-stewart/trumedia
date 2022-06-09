@@ -1,15 +1,26 @@
 import React, { useContext } from "react";
-import { PlayersContext, PlayerContext } from '../Context'
+import { PlayerContext } from '../Context'
+import StatTable from "./StatTable";
 
 function Player(props) {
   const { player } = useContext(PlayerContext);
   
   return (
-    <div>
-      <div className='player-wrapper'>
+    <div className="player-wrapper">
+      <StatTable />
+       {/*Put a graph component here*/}
+    </div>
+  )
+}
+
+export default Player;
+
+
+
+{/* <div className='player-wrapper'>
       <h2>Player Stats</h2>
         <h1>{player.fullName}</h1>
-        <img src={player.image} alt={player.fullName}/>
+        <img src={player.playerImage} alt={player.fullName}/>
       {player.map(stat => (
         <div className='stat-wrapper' key={stat.week}>
           <span className='opponent-wrapper'>
@@ -24,9 +35,4 @@ function Player(props) {
           <p>Comp%: {Math.round((stat.Cmp / stat.Att) * 100)}%</p>
         </div>
       ))}
-      </div>
-    </div>
-  )
-}
-
-export default Player;
+      </div> */}
