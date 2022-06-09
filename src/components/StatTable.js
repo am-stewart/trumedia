@@ -13,14 +13,12 @@ const columns = [
     dataIndex: 'week',
     key: 'week',
     fixed: true,
-    width: 20,
   },
   {
     title: 'Opponent',
     dataIndex: 'opponent',
     key: 'opponent',
     fixed: true,
-    width: 20,
   },
   {
     title: 'PsYds/Att',
@@ -30,7 +28,6 @@ const columns = [
     ),
     key: 'PsYds/Att',
     fixed: true,
-    width: 20,
   },
   {
     title: 'Cmp%',
@@ -40,7 +37,6 @@ const columns = [
     ),
     key: 'Cmp',
     fixed: true,
-    width: 20,
   },
 ];
 

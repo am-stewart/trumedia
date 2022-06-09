@@ -1,6 +1,7 @@
 import React from "react";
 // import { PlayerContext } from '../Context'
 import StatTable from "./StatTable";
+import StatGraph from './StatGraph'
 
 function Player(props) {
   // const { player } = useContext(PlayerContext);
@@ -8,7 +9,7 @@ function Player(props) {
   return (
     <div className="player-wrapper">
       <StatTable />
-       {/*Put a graph component here*/}
+      <StatGraph />
     </div>
   )
 }
