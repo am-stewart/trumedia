@@ -29,7 +29,6 @@ useEffect(() => {
         <div className='player-card' key={player.playerId}>
           <img className='player-photo item' src={player.playerImage} alt={player.fullName}/>
           <h2 className='item'>{player.fullName}</h2>
-          <img className='team-photo item' src={player.teamImage} alt={'team logo'} />
           <button>Show Stats</button>
         </div>
       ))}
