@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import Players from './components/Players';
+import { PlayersContext, PlayerContext} from './Context'
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -8,8 +9,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1> Hello </h1>
-      <Players />
+      <PlayersContext.Provider value={{players, setPlayers}}>
+        <PlayerContext.Provider value={{player, setPlayer}}>
+          <Players />
+        </PlayerContext.Provider>
+      </PlayersContext.Provider>
     </div>
   );
 }
