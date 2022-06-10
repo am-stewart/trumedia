@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 import { Table } from 'antd';
 import { PlayerContext } from '../Context';
 
 const StatTable = () => {
   const { player } = useContext(PlayerContext)
-  console.log('player', player)
+  console.log('player from table', player)
 
 const columns = [
   {

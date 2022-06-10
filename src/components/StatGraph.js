@@ -24,6 +24,7 @@ ChartJS.register(
 
 function StatGraph() {
   const { player } = useContext(PlayerContext);
+  console.log('player from graph', player)
 
   const options = {
       responsive: true,
@@ -38,20 +39,27 @@ function StatGraph() {
       },
     };
 
-    const labels = [];
+    // const labels = [];
+
+    // for (let i = 1; i < player.length; i++) {
+    //   player.map((item) => {
+    //     labels.push(item.week)
+    //     labels.sort(function(a, b) {return a - b;});
+    //   })
+    // }
 
     const data = {
-      labels,
+      labels: player.map(item => item.week),
       datasets: [
         {
-          label: 'Dataset 1',
-          data: '',
+          label: 'Att',
+          data: player.map(item => item.Att),
           borderColor: 'rgb(255, 99, 132)',
           backgroundColor: 'rgba(255, 99, 132, 0.5)',
         },
         {
-          label: 'Dataset 2',
-          data: '',
+          label: 'Cmp',
+          data: player.map(item => item.Cmp),
           borderColor: 'rgb(53, 162, 235)',
           backgroundColor: 'rgba(53, 162, 235, 0.5)',
         },
@@ -59,7 +67,7 @@ function StatGraph() {
     };
 
     return (
-      <div>
+      <div className='graph-wrapper'>
         <Line options={options} data={data} />
       </div>
     )

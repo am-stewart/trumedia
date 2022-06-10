@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
   border: 2px solid orange;
@@ -37,7 +39,7 @@
 }
 
 .players-wrapper {
-  background-color: white;
+  background-color: orange;
   margin: 10% 25%
 }
 
@@ -48,16 +50,14 @@
 .dropdown-wrapper {
   border: 2px solid purple;
 }
+.player-wrapper {
+  display: flex;
+}
 
 .table-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 30%;
-  height: auto;
-  border: 2px solid red;
   margin-top: 25px;
 }
 
-.player-wrapper {
-  display: flex;
+.graph-wrapper {
+  width: 60%;
 }
