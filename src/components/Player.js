@@ -2,7 +2,7 @@ import React from "react";
 import StatTable from "./StatTable";
 import StatGraph from './StatGraph'
 
-function Player(props) {
+function Player() {
   
   return (
     <div className="player-wrapper">

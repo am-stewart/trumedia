@@ -39,15 +39,6 @@ function StatGraph() {
       },
     };
 
-    // const labels = [];
-
-    // for (let i = 1; i < player.length; i++) {
-    //   player.map((item) => {
-    //     labels.push(item.week)
-    //     labels.sort(function(a, b) {return a - b;});
-    //   })
-    // }
-
     const data = {
       labels: player.map(item => item.week),
       datasets: [
