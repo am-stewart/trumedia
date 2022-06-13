@@ -1,8 +1,8 @@
 # TruMedia NFL QB
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## ☝️ Pitch
 The goal of the project is to create an interactive tool that helps the user understand an NFL quarterback's performance over time.
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Steps to clone this project:
 1. Clone this repository.
