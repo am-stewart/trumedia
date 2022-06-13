@@ -12,20 +12,20 @@ const DropdownMenu = () => {
   const { token } = useContext(TokenContext);
   console.log(token)
 
-  useEffect(() => {
-    axios.get('https://project.trumedianetworks.com/api/nfl/players', {
-      headers:
-      {
-        'tempToken': `${token}`,
-      }
-    })
-    .then(res => {
-      setPlayers([...res.data])
-    })
-    .catch(err => {
-      console.log(err);
-    })
-  }, [])
+  // useEffect(() => {
+  //   axios.get('https://project.trumedianetworks.com/api/nfl/players', {
+  //     headers:
+  //     {
+  //       'tempToken': `${token}`,
+  //     }
+  //   })
+  //   .then(res => {
+  //     setPlayers([...res.data])
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   })
+  // }, [])
 
   const handleSelect = (key) => {
     fetchPlayer(key)

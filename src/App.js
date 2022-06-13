@@ -13,7 +13,7 @@ function App() {
     axios.get('https://project.trumedianetworks.com/api/token', {
       headers:
       {
-        'apiKey': '3767d9f3-be40-4315-97e2-7d2f350d3b83', //CHANGE THIS TO ENV VARIABLE
+        'apiKey': process.env.REACT_APP_API_KEY,
       }
     })
     .then(res => {
@@ -23,6 +23,21 @@ function App() {
       setToken(err)
     })
   }, []);
+
+  useEffect(() => {
+    axios.get('https://project.trumedianetworks.com/api/nfl/players', {
+      headers:
+      {
+        'tempToken': `${token}`,
+      }
+    })
+    .then(res => {
+      setPlayers([...res.data])
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }, [token])
 
   return (
     <div className="App">
