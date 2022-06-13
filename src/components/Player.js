@@ -1,4 +1,3 @@
-import React from "react";
 import StatTable from "./StatTable";
 import YdAttGraph from './YdAttGraph';
 import CmpGraph from './CmpGraph';
