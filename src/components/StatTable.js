@@ -37,6 +37,18 @@ const StatTable = () => {
       key: 'Cmp',
       fixed: true,
     },
+    {
+      title: 'RshTD',
+      dataIndex: 'RshTD',
+      key: 'RshTd',
+      fixed: true,
+    },
+    {
+      title: 'PsTD',
+      dataIndex: 'PsTD',
+      key: 'PsTD',
+      fixed: true,
+    },
   ];
 
   return (
