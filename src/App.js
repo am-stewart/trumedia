@@ -20,24 +20,9 @@ function App() {
       setToken(res.data.token)
     })
     .catch(err => {
-      setToken(err)
+      console.log(err)
     })
   }, []);
-
-  useEffect(() => {
-    axios.get('https://project.trumedianetworks.com/api/nfl/players', {
-      headers:
-      {
-        'tempToken': `${token}`,
-      }
-    })
-    .then(res => {
-      setPlayers([...res.data])
-    })
-    .catch(err => {
-      console.log(err);
-    })
-  }, [token])
 
   return (
     <div className="App">
