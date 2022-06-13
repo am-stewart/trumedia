@@ -66,6 +66,7 @@ const DropdownMenu = () => {
              </Select.Option>
           })}
         </Select>
+        <img src={players.playerImage} />
         {toggleOn && <Player />}
     </div>
   );

@@ -24,7 +24,6 @@ ChartJS.register(
 
 function CmpGraph() {
   const { player } = useContext(PlayerContext);
-  console.log('player from graph', player)
 
   const options = {
       responsive: true,
