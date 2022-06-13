@@ -17,4 +17,5 @@ npm install
 ```
 npm start
 ```
-4. Vercel Deployment
+## Vercel Deployment 
+https://trumedia-qb.vercel.app/
