@@ -3,19 +3,20 @@ import 'antd/dist/antd.css';
 import axios from 'axios';
 import { Select } from 'antd';
 import Player from './Player';
-import { PlayersContext, PlayerContext } from '../Context';
+import { PlayersContext, PlayerContext, TokenContext } from '../Context';
 
 const DropdownMenu = () => {
   const { players, setPlayers } = useContext(PlayersContext);
   const { setPlayer } = useContext(PlayerContext);
   const [toggleOn, setToggleOn] = useState(false);
+  const { token } = useContext(TokenContext);
+  console.log(token)
 
   useEffect(() => {
     axios.get('https://project.trumedianetworks.com/api/nfl/players', {
       headers:
       {
-        "tempToken": "304c00c4-927f-432b-a9c7-c22188a7b7d0",
-        "expires": "Fri, 10 Jun 2022 21:33:22 GMT"
+        'tempToken': `${token}`,
       }
     })
     .then(res => {
@@ -39,8 +40,7 @@ const DropdownMenu = () => {
     axios.get(`https://project.trumedianetworks.com/api/nfl/player/${id}`, {
       headers:
       {
-        "tempToken": "304c00c4-927f-432b-a9c7-c22188a7b7d0",
-        "expires": "Fri, 10 Jun 2022 21:33:22 GMT"
+        'tempToken': `${token}`,
       }
     })
     .then(res => {
