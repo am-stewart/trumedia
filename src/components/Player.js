@@ -2,6 +2,7 @@ import React from "react";
 import StatTable from "./StatTable";
 import YdAttGraph from './YdAttGraph';
 import CmpGraph from './CmpGraph';
+import ScoringGraph from "./ScoringGraph";
 
 function Player() {
   
@@ -11,6 +12,7 @@ function Player() {
       <div className="graph-wrapper">
         <YdAttGraph />
         <CmpGraph />
+        <ScoringGraph />
       </div>
     </div>
   )
