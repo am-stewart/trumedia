@@ -7,10 +7,9 @@ import { PlayersContext, PlayerContext, TokenContext } from '../Context';
 
 const DropdownMenu = () => {
   const { players, setPlayers } = useContext(PlayersContext);
-  const { player, setPlayer } = useContext(PlayerContext);
+  const { setPlayer } = useContext(PlayerContext);
   const [toggleOn, setToggleOn] = useState(false);
   const { token } = useContext(TokenContext);
-  console.log(player)
 
   useEffect(() => {
     axios.get('https://project.trumedianetworks.com/api/nfl/players', {
