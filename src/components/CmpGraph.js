@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-function StatGraph() {
+function CmpGraph() {
   const { player } = useContext(PlayerContext);
   console.log('player from graph', player)
 
@@ -30,27 +30,42 @@ function StatGraph() {
       responsive: true,
       plugins: {
         legend: {
-          position: 'bottom',
+          position: 'top',
         },
         title: {
           display: true,
-          text: 'Stat Graph',
+          text: 'Cmp%',
+          font: {
+            size: '16'
+          }
         },
       },
+      scales: {
+        y: {
+          suggestedMin: 0,
+          suggestMax: 100,
+          title: {
+            color: 'red',
+            display: true,
+            text: 'Cmp%'
+          }
+        },
+        x: {
+          title: {
+            color: 'red',
+            display: true,
+            text: 'Week'
+          }
+        }
+      }
     };
 
     const data = {
-      labels: player.map(item => item.week),
+      labels: player.map(item => (item.week)),
       datasets: [
         {
-          label: 'Att',
-          data: player.map(item => item.Att),
-          borderColor: 'rgb(255, 99, 132)',
-          backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        },
-        {
-          label: 'Cmp',
-          data: player.map(item => item.Cmp),
+          label: 'Cmp%',
+          data: player.map(item => (Math.round((item.Cmp / item.Att)*100))),
           borderColor: 'rgb(53, 162, 235)',
           backgroundColor: 'rgba(53, 162, 235, 0.5)',
         },
@@ -58,10 +73,10 @@ function StatGraph() {
     };
 
     return (
-      <div className='graph-wrapper'>
+      <div className='graph'>
         <Line options={options} data={data} />
       </div>
     )
   }
 
-export default StatGraph;
+export default CmpGraph;

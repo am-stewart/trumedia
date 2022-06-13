@@ -1,13 +1,17 @@
 import React from "react";
 import StatTable from "./StatTable";
-import StatGraph from './StatGraph'
+import YdAttGraph from './YdAttGraph';
+import CmpGraph from './CmpGraph';
 
 function Player() {
   
   return (
     <div className="player-wrapper">
       <StatTable />
-      <StatGraph />
+      <div className="graph-wrapper">
+        <YdAttGraph />
+        <CmpGraph />
+      </div>
     </div>
   )
 }
